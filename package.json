@@ -17,11 +17,11 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "mongodb": "^2.2.31",
-    "mongoose": "^4.10.8"
+    "mongoose": "^4.10.8",
+    "express": "^4.16.1"
   },
   "devDependencies": {
     "expect": "^21.2.1",
-    "express": "^4.16.1",
     "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
     "supertest": "^3.0.0"
