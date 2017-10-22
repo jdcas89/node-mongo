@@ -4,13 +4,6 @@ const {
   ObjectID
 } = require('mongodb')
 const {
-  todos,
-  populateTodos,
-  users,
-  populateUsers
-} = require('./seed/seed')
-
-const {
   app
 } = require('./../server')
 const {
@@ -21,6 +14,12 @@ const {
   User
 } = require('./../models/user')
 
+const {
+  todos,
+  populateTodos,
+  users,
+  populateUsers
+} = require('./seed/seed')
 
 beforeEach(populateUsers)
 beforeEach(populateTodos)

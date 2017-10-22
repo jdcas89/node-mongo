@@ -9,6 +9,8 @@ const {
   User
 } = require('./../../models/user')
 
+console.log(process.env.JWT_SECRET)
+
 const userOneId = new ObjectID();
 const userTwoId = new ObjectID();
 
@@ -38,7 +40,7 @@ const users = [{
       token: jwt.sign({
         _id: userOneId,
         access: 'auth'
-      }, 'somesecretvalue').toString()
+      }, process.env.JWT_SECRET).toString()
     }]
   },
   {
@@ -50,7 +52,7 @@ const users = [{
       token: jwt.sign({
         _id: userTwoId,
         access: 'auth'
-      }, 'somesecretvalue').toString()
+      }, process.env.JWT_SECRET).toString()
     }]
   }
 ]
