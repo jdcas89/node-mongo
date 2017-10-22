@@ -14,15 +14,18 @@ const userTwoId = new ObjectID();
 
 const todos = [{
     _id: new ObjectID(),
-    text: "test todo"
+    text: "test todo",
+    _creator: userOneId
   },
   {
     _id: new ObjectID(),
-    text: "second todo"
+    text: "second todo",
+    _creator: userTwoId
   },
   {
     _id: new ObjectID(),
-    text: "third todo"
+    text: "third todo",
+    _creator: userTwoId
   }
 ]
 
@@ -41,7 +44,14 @@ const users = [{
   {
     _id: userTwoId,
     email: 'two@test.com',
-    password: '87654321'
+    password: '87654321',
+    tokens: [{
+      access: 'auth',
+      token: jwt.sign({
+        _id: userTwoId,
+        access: 'auth'
+      }, 'somesecretvalue').toString()
+    }]
   }
 ]
 
