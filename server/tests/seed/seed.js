@@ -9,8 +9,6 @@ const {
   User
 } = require('./../../models/user')
 
-console.log(process.env.JWT_SECRET)
-
 const userOneId = new ObjectID();
 const userTwoId = new ObjectID();
 
