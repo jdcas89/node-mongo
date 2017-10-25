@@ -1,9 +1,8 @@
-const { SHA256 } = require('crypto-js')
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcryptjs')
+const { SHA256 } = require("crypto-js");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
-
-var password = 'abcdefgh123'
+var password = "abcdefgh123";
 
 // bcrypt.genSalt(10, (err, salt) => {
 //   bcrypt.hash(password,salt, (err, hash) =>{
@@ -11,13 +10,12 @@ var password = 'abcdefgh123'
 //   })
 // })
 
-var hashedPassword = '$2a$10$DM/1hUdVpGmWHEmTwVaDYe3GfkzxFelyJVZkua9MsTqjnss5szapu'
+var hashedPassword =
+  "$2a$10$DM/1hUdVpGmWHEmTwVaDYe3GfkzxFelyJVZkua9MsTqjnss5szapu";
 
 bcrypt.compare(password, hashedPassword, (err, result) => {
-  console.log(result)
-})
-
-
+  console.log(result);
+});
 
 // var data = {
 //   id: 10
@@ -53,6 +51,3 @@ bcrypt.compare(password, hashedPassword, (err, result) => {
 // }else{
 //   console.log('Data was compromised')
 // }
-
-
-

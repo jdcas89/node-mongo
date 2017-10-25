@@ -1,14 +1,13 @@
-const { MongoClient, ObjectID } = require('mongodb')
+const { MongoClient, ObjectID } = require("mongodb");
 
-const dbName = 'TodoApp'
-const mongoUrl = `mongodb://localhost:27017/${dbName}`
-
+const dbName = "TodoApp";
+const mongoUrl = `mongodb://localhost:27017/${dbName}`;
 
 MongoClient.connect(mongoUrl, (err, db) => {
-  if (err){
-    return console.log('Unable to connect to MongoDB server')
+  if (err) {
+    return console.log("Unable to connect to MongoDB server");
   }
-  console.log('Connected to MongoDB server')
+  console.log("Connected to MongoDB server");
 
   // db.collection('Todos').find({completed: false}).toArray().then((docs) => {
   //   console.log('Todos')
@@ -16,7 +15,6 @@ MongoClient.connect(mongoUrl, (err, db) => {
   // }, (err) =>{
   //   console.log('Unable to fetch todos', err)
   // })
-
 
   // db.collection('Todos').find({_id: new ObjectID('59d4675e6845bf1209a6bfe9')}).toArray().then((docs) => {
   //   console.log('A specific todo note using ObjectID')
@@ -32,10 +30,17 @@ MongoClient.connect(mongoUrl, (err, db) => {
   //   console.log('Unable to fetch todos', err)
   // })
 
-  db.collection('Users').find({name: 'test'}).toArray().then((docs) => {
-    console.log('Print documents with name test')
-    console.log(JSON.stringify(docs, undefined, 2))
-  }, (err) =>{
-    console.log('Unable to fetch todos', err)
-  })
-})
+  db
+    .collection("Users")
+    .find({ name: "test" })
+    .toArray()
+    .then(
+      docs => {
+        console.log("Print documents with name test");
+        console.log(JSON.stringify(docs, undefined, 2));
+      },
+      err => {
+        console.log("Unable to fetch todos", err);
+      }
+    );
+});
